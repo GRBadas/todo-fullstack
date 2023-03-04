@@ -20,6 +20,10 @@ class TodoService {
         return axios.post(TODO_API_BASE_URL, task);
     }
 
+    deleteTask(task) {
+        return axios.delete(TODO_API_BASE_URL + "/" + task.id)
+    }
+
 }
 
 export default new TodoService;

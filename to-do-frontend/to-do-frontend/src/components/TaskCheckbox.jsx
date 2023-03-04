@@ -24,6 +24,18 @@ function TaskCheckbox({task, fetchTask}) {
         navigate(`/update-task/${task.id}`);
       }
 
+      async function deleteTask(taskId) {
+        await TodoService.deleteTask(taskId)
+        .then(response => {
+            console.log(`Tarefa com o ID ${taskId} deletada com sucesso.`);
+            setTaskState(task.filter(task => task.id !== taskId));
+        })
+        .catch(error => {
+            console.log(`Erro ao deletar a tarefa com o id ${taskId}: ${error.message}`)
+        })
+        window.location.reload()
+      }
+
 
     return(
         <tr key={taskState.id}>
@@ -34,7 +46,7 @@ function TaskCheckbox({task, fetchTask}) {
         </td>
         <td>
             <button className="btn btn-info" onClick={() => updateTask(task)}> Modificar </button>
-            <button className='btn btn-danger' style={{marginLeft: "10px"}}> Excluir </button>
+            <button className='btn btn-danger' onClick={() => deleteTask(task)} style={{marginLeft: "10px"}}> Excluir </button>
         </td>
       </tr>
     )

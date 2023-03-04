@@ -34,7 +34,7 @@ const fetchTask = async() => {
 
   return (
     <div>
-      <h2 className='text-center'>Tasks List</h2>
+      <h2 className='text-center'> Lista de tarefas </h2>
       <div className='row'>
       <button className='btn btn-primary' onClick={addTask}>
           Nova Tarefa
