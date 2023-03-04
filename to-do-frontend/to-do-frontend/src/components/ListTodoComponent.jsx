@@ -52,7 +52,7 @@ const fetchTask = async() => {
           </thead>
           <tbody>
             {tasks.map((task) => (
-              <TaskCheckbox task={task}/>
+              <TaskCheckbox task={task} fetchTask={fetchTask}/>
             ))}
           </tbody>
         </table>

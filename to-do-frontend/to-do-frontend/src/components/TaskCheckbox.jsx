@@ -1,37 +1,36 @@
-﻿import React, { useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import TodoService from "../services/TodoService";
 
 
-function TaskCheckbox({task}) {
+function TaskCheckbox({task, fetchTask}) {
     const [taskState, setTaskState] = useState(task);
     const navigate = useNavigate();
-
+    useEffect(() => {
+        handleChange()
+    },[])
 
     const handleChange = async (e) => {
         console.log(e)
-        setTaskState((previousState) => {
-            console.log(previousState)
-            return {
-                ...previousState,
-                completed: !e.target.checked
-            }
-        })
-        // console.log(taskState)
-        await TodoService.updateTask(taskState)
-      };
-
+        try {
+            await TodoService.updateTask({...task, completed: e.target.checked})
+            await fetchTask()
+        } catch (error) {
+            console.log(error)
+        }
+    };
 
       function updateTask (){
         navigate(`/update-task/${task.id}`);
       }
+
 
     return(
         <tr key={taskState.id}>
         <td> {taskState.task} </td>
         <td> {taskState.comment} </td>
         <td>
-            <input type="checkbox" class="form-check-input" onChange={handleChange}/>
+            <input type="checkbox" class="form-check-input" defaultChecked={taskState.completed} onChange={handleChange}/>
         </td>
         <td>
             <button className="btn btn-info" onClick={() => updateTask(task)}> Modificar </button>
