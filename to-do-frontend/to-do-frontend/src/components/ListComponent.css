@@ -1,0 +1,64 @@
+﻿
+  #btnadd {
+    background-color: rgb(105, 91, 103);
+    border: transparent;
+    margin-bottom: 4px;
+    border-radius: .8rem;
+  }
+
+  #btnupdate {
+    border: transparent;
+    background-color: #8a66d0;
+    color: white;
+    margin-bottom: 6px;
+  }
+
+  #btndelete {
+    border: transparent;
+    background-color: #d92a56;
+
+  }
+
+ #customtable {
+    background-color: #fff5;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+    border: transparent;
+    overflow: hidden;
+ }
+
+ #page {
+  background-color: rgb(163, 163, 163);
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-image: url(../assets/images/wallpapersden.com_landscape-pixel-art_1920x1080.jpg);
+  display: block;
+
+ }
+
+ #badasfooter {
+  background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
+    --bs-bg-opacity: 1;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+ }
+
+ #thead {
+  width: 100%;
+  height: 100%;
+  background-color: #fff4;
+ }
+
+ #checkstyle {
+  background-color: rgb(134 116 154)
+ }
+
+ #column {
+  width: 30%;
+  display: flex;
+ }
+
+

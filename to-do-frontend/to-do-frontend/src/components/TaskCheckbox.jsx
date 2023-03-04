@@ -42,11 +42,11 @@ function TaskCheckbox({task, fetchTask}) {
         <td> {taskState.task} </td>
         <td> {taskState.comment} </td>
         <td>
-            <input type="checkbox" class="form-check-input" defaultChecked={taskState.completed} onChange={handleChange}/>
+            <input type="checkbox" class="form-check-input" id="checkstyle" defaultChecked={taskState.completed} onChange={handleChange}/>
         </td>
         <td>
-            <button className="btn btn-info" onClick={() => updateTask(task)}> Modificar </button>
-            <button className='btn btn-danger' onClick={() => deleteTask(task)} style={{marginLeft: "10px"}}> Excluir </button>
+            <button className="btn btn-info" id="btnupdate" onClick={() => updateTask(task)}> Modificar </button>
+            <button className='btn btn-danger' id="btndelete" onClick={() => deleteTask(task)} style={{marginLeft: "10px"}}> Excluir </button>
         </td>
       </tr>
     )

@@ -9,7 +9,7 @@ import UpdateTodoComponent from './components/UpdateTaskComponent';
 function App() {
 
   return (
-    <div className="App">
+    <div className="App" id='page'>
       <Router>
         <HeaderComponent />
         <div className='container'>
@@ -18,8 +18,8 @@ function App() {
             <Route path='/add-task' element ={<CreateTodoComponent />}/>
             <Route path='/update-task/:id' element ={<UpdateTodoComponent />}/>
           </Routes>
-          <FooterComponent/>
         </div>
+      <FooterComponent/>
       </Router>
     </div>
   )

@@ -38,7 +38,7 @@ const CreateTodoComponent = () => {
     return (
         <div className='container'>
             <div className='row'>
-                <div className='card col-md-6 offset-md-3 offset-md-3'>
+                <div className='card col-md-6 offset-md-3 offset-md-3' id='customtable'>
                     <h3 className='text-center'> Adicionar Tarefa </h3>
                     <div className='card-body'>
                         <form action=''>
@@ -64,11 +64,15 @@ const CreateTodoComponent = () => {
                                 />
                             </div>
           
-                            <button className='btn btn-success' onClick={saveTask}>
+                            <button
+                             className='btn btn-success'
+                              id='btnupdate'
+                               onClick={saveTask}>
                                 Salvar
                             </button>
                             <button
                                 className='btn btn-danger'
+                                id='btndelete'
                                 onClick={cancel}
                                 style={{ marginLeft: '10px' }}
                             >

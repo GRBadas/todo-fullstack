@@ -62,7 +62,7 @@ const UpdateTodoComponent = () => {
     return (
         <div className='container'>
             <div className='row'>
-                <div className='card col-md-6 offset-md-3 offset-md-3'>
+                <div id='customtable' className='card col-md-6 offset-md-3 offset-md-3'>
                     <div className='card-body'>
                         <form action=''>
                             <div className='form-group'>
@@ -87,10 +87,11 @@ const UpdateTodoComponent = () => {
                                 />
                             </div>
           
-                            <button className='btn btn-success' onClick={updateTask}>
+                            <button id='btnupdate' className='btn btn-success' onClick={updateTask}>
                                 Salvar
                             </button>
                             <button
+                                id='btndelete'
                                 className='btn btn-danger'
                                 onClick={cancel}
                                 style={{ marginLeft: '10px' }}

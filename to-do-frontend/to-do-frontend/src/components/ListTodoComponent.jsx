@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import TodoService from '../services/TodoService';
 import axios from 'axios'
 import TaskCheckbox from './TaskCheckbox';
+import './ListComponent.css';
 
 function ListTodoComponent() {
   const [tasks, setTasks] = useState([]);
@@ -36,18 +37,18 @@ const fetchTask = async() => {
     <div>
       <h2 className='text-center'> Lista de tarefas </h2>
       <div className='row'>
-      <button className='btn btn-primary' onClick={addTask}>
+      <button className='btn btn-primary' id='btnadd' onClick={addTask}>
           Nova Tarefa
         </button>
       </div>
       <div className='row'>
-        <table className='table table-striped table-bordered'>
-          <thead>
+        <table className='table table-striped table-bordered' id='customtable'>
+          <thead id='thead'>
             <tr>
               <th> Tarefa </th>
               <th> Comentário </th>
               <th> Status </th>
-              <th> Actions </th>
+              <th id='column'> Actions </th>
             </tr>
           </thead>
           <tbody>
